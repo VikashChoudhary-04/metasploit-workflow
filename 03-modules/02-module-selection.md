@@ -2,7 +2,7 @@
 
 ## Objective
 
-Learn how to select the appropriate Metasploit module from multiple candidates using evidence, compatibility, prerequisites, and engagement objectives.
+- Learn how to select the appropriate Metasploit module from multiple candidates using evidence, compatibility, prerequisites, and engagement objectives.
 
 By the end of this file, you should be able to:
 
