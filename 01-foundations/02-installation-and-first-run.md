@@ -24,10 +24,10 @@ Use a system or virtual machine dedicated to authorized security testing where p
 
 Recommended environments include:
 
-* Kali Linux.
-* Another supported Linux distribution.
-* Windows.
-* macOS.
+  * Kali Linux.
+  * Another supported Linux distribution.
+  * Windows.
+  * macOS.
 
 For practical learning, a Linux security-testing environment is generally the most convenient.
 
