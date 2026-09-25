@@ -4,8 +4,6 @@ A practical, decision-oriented workflow for learning and mastering **Metasploit 
 
 > **Core objective:** Learn how to determine what to do next with Metasploit when given an unfamiliar authorized target and objective — without depending on a step-by-step tutorial.
 
----
-
 ## What This Repository Is
 
 This repository is **not a Metasploit command dictionary**.
@@ -52,24 +50,20 @@ CLEAN UP
 
 The goal is to make this workflow natural enough that the learner can eventually perform it without opening this repository.
 
----
-
-## Who This Is For
+## Target Learner
 
 This repository assumes the learner:
 
-* has never used Metasploit;
-* may know basic Linux commands;
-* understands basic concepts such as IP addresses and network ports;
-* does not know Metasploit terminology;
-* does not know how Metasploit modules work;
-* does not know how to select payloads;
-* does not know how sessions work;
-* does not know how to troubleshoot Metasploit.
+* Has never used Metasploit.
+* May know basic Linux commands.
+* Understands basic concepts such as IP addresses and network ports.
+* Does not know Metasploit terminology.
+* Does not know how Metasploit modules work.
+* Does not know how to select payloads.
+* Does not know how sessions work.
+* Does not know how to troubleshoot Metasploit.
 
 It does **not** require previous Metasploit experience.
-
----
 
 ## Learning Philosophy
 
@@ -79,7 +73,7 @@ The repository follows an approximately:
 
 approach.
 
-Every important concept is taught through:
+Every important concept should answer:
 
 ```text
 WHAT?
@@ -99,18 +93,16 @@ NEXT
 
 Theory is included only when it improves the learner's ability to:
 
-* operate Metasploit;
-* make decisions;
-* interpret results;
-* troubleshoot failures;
-* understand important limitations;
-* work safely and methodically.
+* Operate Metasploit.
+* Make decisions.
+* Interpret results.
+* Troubleshoot failures.
+* Understand important limitations.
+* Work safely and methodically.
 
----
+## Core Mental Models
 
-## The Core Mental Models
-
-### 1. The Metasploit Workflow
+### Search → Read → Configure → Validate → Run → Verify → Next
 
 ```text
 SEARCH
@@ -119,7 +111,7 @@ READ
   ↓
 CONFIGURE
   ↓
-CHECK
+VALIDATE
   ↓
 RUN
   ↓
@@ -128,9 +120,7 @@ VERIFY
 NEXT
 ```
 
----
-
-### 2. Failure Is Information
+### Failure → Diagnose → Change One Thing → Retest
 
 ```text
 FAILURE
@@ -144,11 +134,7 @@ CHANGE ONE THING
 RETEST
 ```
 
-Do not respond to failure by randomly changing multiple settings.
-
----
-
-### 3. No Result Does Not Automatically Mean No Vulnerability
+### No Result ≠ No Vulnerability
 
 ```text
 NO RESULT
@@ -156,21 +142,71 @@ NO RESULT
 NO VULNERABILITY
 ```
 
-A failure can originate from:
+A failure may result from:
 
-* incorrect target identification;
-* incorrect service assumptions;
-* incorrect module selection;
-* incorrect configuration;
-* incorrect target selection;
-* incompatible payload;
-* network connectivity;
-* handler configuration;
-* target protections;
-* environmental conditions;
-* module limitations.
+* Incorrect target identification.
+* Incorrect service or version assumptions.
+* Incorrect module selection.
+* Incorrect configuration.
+* Incorrect target selection.
+* Incompatible payload.
+* Network connectivity.
+* Handler configuration.
+* Target protections.
+* Environmental conditions.
+* Module limitations.
 
----
+## Universal Metasploit Workflow
+
+The repository repeatedly uses this workflow:
+
+```text
+SCOPE
+  ↓
+UNDERSTAND TARGET
+  ↓
+DEFINE OBJECTIVE
+  ↓
+IDENTIFY MISSING INFORMATION
+  ↓
+SEARCH
+  ↓
+READ
+  ↓
+CHECK REQUIREMENTS
+  ↓
+CONFIGURE
+  ↓
+VALIDATE
+  ↓
+RUN
+  ↓
+INTERPRET
+  ↓
+VERIFY
+  ↓
+SESSION / RESULT
+  ↓
+NEXT OBJECTIVE
+  ↓
+DOCUMENT
+  ↓
+CLEAN UP
+```
+
+When something fails:
+
+```text
+FAILURE
+  ↓
+IDENTIFY FAILURE LAYER
+  ↓
+CHECK THE RELEVANT ASSUMPTION
+  ↓
+CHANGE ONE THING
+  ↓
+RETEST
+```
 
 ## Repository Structure
 
@@ -228,87 +264,85 @@ metasploit-workflow/
     └── README.md
 ```
 
----
-
 ## Learning Path
 
 The repository progressively removes instructions.
 
-### Stage 1 — Learn
+### Stage 1 — Guided Learning
 
-You are given:
-
-```text
-Concept
-↓
-Explanation
-↓
-Command
-↓
-Expected result
-```
-
-### Stage 2 — Follow
-
-You are given:
+The learner receives:
 
 ```text
-Objective
-↓
-Workflow
-↓
-Limited command guidance
+CONCEPT
+  ↓
+EXPLANATION
+  ↓
+COMMAND
+  ↓
+EXPECTED RESULT
 ```
 
-### Stage 3 — Decide
+The purpose is to establish correct fundamentals.
 
-You are given:
+### Stage 2 — Workflow Learning
+
+The learner receives:
 
 ```text
-Target
-+
-Known information
-+
-Objective
+OBJECTIVE
+  ↓
+WORKFLOW
+  ↓
+LIMITED GUIDANCE
 ```
 
-You determine the appropriate Metasploit workflow.
+The learner begins making decisions.
 
-### Stage 4 — Troubleshoot
+### Stage 3 — Scenario Learning
 
-You are given a broken or unexpected situation.
-
-You determine:
+The learner receives:
 
 ```text
-What failed?
-↓
-Why?
-↓
-What should I test?
-↓
-What should I change?
+TARGET
++
+KNOWN INFORMATION
++
+OBJECTIVE
 ```
 
-### Stage 5 — Operate
+The learner determines the appropriate workflow.
 
-You are given:
+### Stage 4 — Troubleshooting
+
+The learner receives a broken or unexpected situation and determines:
 
 ```text
-Scope
-+
-Target
-+
-Objective
-+
-Rules
+WHAT FAILED?
+  ↓
+WHY?
+  ↓
+WHAT SHOULD I TEST?
+  ↓
+WHAT SHOULD I CHANGE?
 ```
 
-No command sequence is provided.
+### Stage 5 — Independent Operation
 
-You build the workflow yourself.
+The learner receives only:
 
----
+```text
+SCOPE
++
+TARGET
++
+OBJECTIVE
++
+RULES
++
+EVIDENCE REQUIREMENTS
+```
+
+No step-by-step command sequence is provided.
 
 ## Curriculum
 
@@ -322,63 +356,59 @@ Learn:
 * Framework architecture.
 * Installation and verification.
 
----
-
 ### 02 — Interface
 
 Learn to operate `msfconsole` comfortably.
 
 Focus on:
 
-* navigation;
-* help;
-* searching;
-* module selection;
-* information;
-* options;
-* configuration;
-* execution;
-* sessions;
-* jobs.
-
----
+* Navigation.
+* Help.
+* Searching.
+* Module selection.
+* Information.
+* Options.
+* Configuration.
+* Execution.
+* Sessions.
+* Jobs.
 
 ### 03 — Modules
 
-Learn how to approach an unfamiliar module.
-
-Focus on:
+Learn how to approach an unfamiliar module:
 
 ```text
 SEARCH
-→ IDENTIFY
-→ INFO
-→ REQUIREMENTS
-→ CONFIGURE
-→ VALIDATE
-→ RUN
+  ↓
+IDENTIFY
+  ↓
+INFO
+  ↓
+REQUIREMENTS
+  ↓
+CONFIGURE
+  ↓
+VALIDATE
+  ↓
+RUN
 ```
-
----
 
 ### 04 — Payloads
 
 Build a practical understanding of:
 
-* payloads;
-* staged and stageless payloads;
-* operating systems;
-* architectures;
-* transports;
-* reverse connections;
-* bind connections;
-* LHOST/LPORT;
-* handlers;
-* payload compatibility.
+* Payloads.
+* Staged and stageless payloads.
+* Operating systems.
+* Architectures.
+* Transports.
+* Reverse connections.
+* Bind connections.
+* LHOST and LPORT.
+* Handlers.
+* Payload compatibility.
 
-The objective is to select payloads based on conditions rather than memorized names.
-
----
+The objective is to select payloads based on target conditions rather than memorized names.
 
 ### 05 — Exploitation
 
@@ -386,78 +416,74 @@ Learn controlled exploitation:
 
 ```text
 IDENTIFY
-→ VALIDATE
-→ SELECT
-→ CONFIGURE
-→ CHECK
-→ EXECUTE
-→ VERIFY
+  ↓
+VALIDATE
+  ↓
+SELECT
+  ↓
+CONFIGURE
+  ↓
+CHECK
+  ↓
+EXECUTE
+  ↓
+VERIFY
 ```
 
-Failure becomes part of the learning process.
+Failure is treated as part of the workflow.
 
----
-
-### 06 — Sessions & Meterpreter
+### 06 — Sessions and Meterpreter
 
 Learn to:
 
-* identify sessions;
-* interact with sessions;
-* background sessions;
-* manage multiple sessions;
-* understand session stability;
-* use Meterpreter by objective rather than memorizing commands.
-
----
+* Identify sessions.
+* Interact with sessions.
+* Background sessions.
+* Manage multiple sessions.
+* Understand session stability.
+* Use Meterpreter by objective rather than memorizing commands.
 
 ### 07 — Post-Exploitation
 
-Learn how to reason after obtaining access.
+Learn how to reason after obtaining authorized access.
 
 Focus on:
 
-* system context;
-* user context;
-* process awareness;
-* network awareness;
-* authorized post-exploitation;
-* evidence;
-* documentation;
-* cleanup.
+* System context.
+* User context.
+* Process awareness.
+* Network awareness.
+* Authorized post-exploitation.
+* Evidence.
+* Documentation.
+* Cleanup.
 
----
-
-### 08 — Database & Automation
+### 08 — Database and Automation
 
 Learn how to organize and repeat work using:
 
-* databases;
-* workspaces;
-* hosts;
-* services;
-* credentials;
-* vulnerabilities;
-* loot;
-* resource scripts;
-* controlled automation.
-
----
+* Databases.
+* Workspaces.
+* Hosts.
+* Services.
+* Credentials.
+* Vulnerabilities.
+* Loot.
+* Resource scripts.
+* Controlled automation.
 
 ### 09 — Troubleshooting
 
 Build a universal diagnostic process for:
 
-* module failures;
-* configuration problems;
-* target mismatches;
-* payload failures;
-* listener problems;
-* network problems;
-* session failures;
-* environmental restrictions.
-
----
+* Module failures.
+* Configuration problems.
+* Target mismatches.
+* Payload failures.
+* Listener problems.
+* Network problems.
+* Session failures.
+* Environmental restrictions.
 
 ### 10 — Decision Guides
 
@@ -469,130 +495,63 @@ and:
 
 > **Should I use Metasploit at all?**
 
----
-
 ### 11 — Practical Labs
 
 Progress through:
 
 ```text
-Guided
+GUIDED
   ↓
-Semi-guided
+SEMI-GUIDED
   ↓
-Scenario-based
+SCENARIO-BASED
   ↓
-Independent
+INDEPENDENT
 ```
-
----
 
 ### 12 — Final Challenge
 
 Complete an authorized assessment with:
 
-* no command list;
-* no module name;
-* no payload name;
-* no step-by-step instructions.
+* No command list.
+* No module name.
+* No payload name.
+* No step-by-step instructions.
 
 The learner must determine the workflow independently.
 
----
+## Module Categories
 
-## Universal Operator Decision Tree
+The repository teaches module categories according to their operational purpose.
 
-When facing an unfamiliar target:
+| Category  | Primary purpose                                             |
+| --------- | ----------------------------------------------------------- |
+| Auxiliary | Useful actions that do not necessarily involve exploitation |
+| Exploit   | Attempt to leverage a vulnerability                         |
+| Payload   | Define what executes after exploitation                     |
+| Post      | Perform authorized actions after obtaining access           |
+| Encoder   | Transform payload representations for supported use cases   |
+| NOP       | Generate NOP-related payload components                     |
+| Evasion   | Support specialized evasion-oriented testing                |
 
-```text
-1. IS THE ACTION AUTHORIZED?
-        ↓
-2. WHAT IS THE OBJECTIVE?
-        ↓
-3. WHAT DO I KNOW?
-        ↓
-4. WHAT INFORMATION IS MISSING?
-        ↓
-5. WHICH TOOL OR CAPABILITY FITS?
-        ↓
-6. SEARCH
-        ↓
-7. READ
-        ↓
-8. VALIDATE THE MODULE
-        ↓
-9. CONFIGURE
-        ↓
-10. CHECK WHEN SUPPORTED
-        ↓
-11. RUN
-        ↓
-12. INTERPRET
-        ↓
-13. VERIFY
-        ↓
-14. SESSION / RESULT
-        ↓
-15. PERFORM ONLY THE REQUIRED NEXT ACTION
-        ↓
-16. COLLECT NECESSARY EVIDENCE
-        ↓
-17. DOCUMENT
-        ↓
-18. CLEAN UP
-        ↓
-19. DEFINE THE NEXT OBJECTIVE
-```
-
----
-
-## Troubleshooting Model
-
-When something fails:
+The curriculum prioritizes:
 
 ```text
-FAILURE
-  ↓
-WHAT EXACTLY FAILED?
-  ↓
-TARGET?
-  ↓
-SERVICE?
-  ↓
-VERSION / CONDITION?
-  ↓
-MODULE?
-  ↓
-OPTIONS?
-  ↓
-TARGET SELECTION?
-  ↓
-PAYLOAD?
-  ↓
-NETWORK?
-  ↓
-HANDLER?
-  ↓
-SESSION?
-  ↓
-ENVIRONMENT?
-  ↓
-ALTERNATIVE MODULE / TOOL?
+AUXILIARY
+EXPLOIT
+PAYLOAD
+POST
 ```
 
-Change **one important assumption at a time** and retest.
+because these are most important to the core operator workflow.
 
----
+## Metasploit and Other Tools
 
-## Metasploit Is Not the Entire Toolkit
-
-A capable penetration tester knows when to combine Metasploit with other tools.
-
-Examples:
+Metasploit is part of a broader penetration-testing toolkit.
 
 | Objective                     | Possible tool                         |
 | ----------------------------- | ------------------------------------- |
-| Network/service discovery     | Nmap                                  |
+| Network and service discovery | Nmap                                  |
 | Web application testing       | Burp Suite                            |
 | Packet analysis               | Wireshark                             |
 | Vulnerability assessment      | Nessus / OpenVAS                      |
@@ -605,9 +564,13 @@ Examples:
 
 This repository does not attempt to replace those tools.
 
-It teaches how to decide **when Metasploit belongs in the workflow**.
+It teaches the learner to determine:
 
----
+> **When should Metasploit be used?**
+
+and:
+
+> **When should another tool be used instead?**
 
 ## Lab Environment
 
@@ -615,15 +578,13 @@ Use only intentionally vulnerable or explicitly authorized environments.
 
 Recommended practice targets include:
 
-* Metasploitable;
-* OWASP Juice Shop where applicable;
-* DVWA where applicable;
-* other intentionally vulnerable local environments;
-* explicitly authorized penetration-testing environments.
+* Metasploitable.
+* OWASP Juice Shop where applicable.
+* DVWA where applicable.
+* Other intentionally vulnerable local environments.
+* Explicitly authorized penetration-testing environments.
 
 Do **not** use this repository to test systems without authorization.
-
----
 
 ## Professional Operating Principles
 
@@ -638,12 +599,10 @@ Throughout the repository:
 * Record what you actually observed.
 * Distinguish discovery from validation.
 * Treat failed attempts as information.
-* Document exact configurations when relevant.
+* Record exact configurations when relevant.
 * Stop when the objective is satisfied.
 * Clean up appropriately.
 * Know when another tool is more appropriate.
-
----
 
 ## Completion Standard
 
@@ -691,8 +650,6 @@ What to do next
 
 without following a step-by-step tutorial.
 
----
-
 ## Final Goal
 
 The goal is not:
@@ -703,13 +660,11 @@ The goal is:
 
 > **"I understand Metasploit well enough that the interface feels familiar, the workflow feels natural, and I can independently determine what to do next when faced with an unfamiliar authorized situation."**
 
----
+## Current Documentation
 
-## Sources
-
-For current framework behavior and terminology, prefer the official Metasploit documentation:
+Use current official documentation when verifying framework behavior, commands, module functionality, or terminology:
 
 * [Metasploit Documentation](https://docs.metasploit.com/)
-* [Metasploit Framework on GitHub](https://github.com/rapid7/metasploit-framework)
+* [Metasploit Framework](https://github.com/rapid7/metasploit-framework)
 
-Commands and workflows in this repository should be verified against current framework documentation before being treated as authoritative.
+Concrete commands and module examples in this repository should be verified against current framework documentation before being treated as authoritative.
